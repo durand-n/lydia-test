@@ -1,0 +1,989 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14447EED25379718008F953F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447EEC25379718008F953F /* AppDelegate.swift */; };
+		14447EF725379718008F953F /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
+		14447EF92537971F008F953F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14447EF82537971F008F953F /* Assets.xcassets */; };
+		14447EFC2537971F008F953F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14447EFA2537971F008F953F /* LaunchScreen.storyboard */; };
+		14447F0725379720008F953F /* lydia_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F0625379720008F953F /* lydia_testTests.swift */; };
+		14447F1225379720008F953F /* lydia_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F1125379720008F953F /* lydia_testUITests.swift */; };
+		14447F282537A1FA008F953F /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F272537A1FA008F953F /* Base.swift */; };
+		14447F302537A219008F953F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F2F2537A219008F953F /* BaseNavigationController.swift */; };
+		14447F352537A236008F953F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F342537A236008F953F /* Router.swift */; };
+		14447F3A2537A248008F953F /* RouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F392537A248008F953F /* RouterImp.swift */; };
+		14447F432537A2A6008F953F /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F422537A2A6008F953F /* ModuleFactory.swift */; };
+		14447F482537A2B5008F953F /* ModuleFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F472537A2B5008F953F /* ModuleFactoryImp.swift */; };
+		14447F4D2537A4F7008F953F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F4C2537A4F7008F953F /* CoordinatorFactory.swift */; };
+		14447F522537A536008F953F /* CoordinatorFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F512537A536008F953F /* CoordinatorFactoryImp.swift */; };
+		14447F582537A61E008F953F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F572537A61E008F953F /* AppCoordinator.swift */; };
+		14447F632537A67B008F953F /* ContactsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F622537A67B008F953F /* ContactsListController.swift */; };
+		14447F692537A6F7008F953F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F682537A6F7008F953F /* UIViewController.swift */; };
+		14447F712537A765008F953F /* ContactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F702537A765008F953F /* ContactsCoordinator.swift */; };
+		14447F762537A7C3008F953F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F752537A7C3008F953F /* ContactsViewModel.swift */; };
+		14447F7B2537A7D0008F953F /* ContactsListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F7A2537A7D0008F953F /* ContactsListViewModelType.swift */; };
+		14447F802537A85C008F953F /* ContactsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F7F2537A85C008F953F /* ContactsDetailsController.swift */; };
+		14447F852537A873008F953F /* ContactsDetailsViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F842537A873008F953F /* ContactsDetailsViewModelType.swift */; };
+		144E0166253A38AD00684B3E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E0164253A38AD00684B3E /* User+CoreDataClass.swift */; };
+		144E0167253A38AD00684B3E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */; };
+		144E016F253A391900684B3E /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E016E253A391900684B3E /* UserDataManager.swift */; };
+		144E0184253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
+		144E0188253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
+		144E018D253A564F00684B3E /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E018C253A564F00684B3E /* NetworkActivityManager.swift */; };
+		148DD81C2538672900C0523F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD81B2538672900C0523F /* TabbarController.swift */; };
+		148DD824253870F700C0523F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD823253870F700C0523F /* UILabel.swift */; };
+		148DD829253871C700C0523F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD828253871C700C0523F /* UIColor.swift */; };
+		148DD82E2538726F00C0523F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD82D2538726F00C0523F /* UIView.swift */; };
+		148DD83D25387DCF00C0523F /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD83C25387DCF00C0523F /* UIImageView.swift */; };
+		148DD84625387EDB00C0523F /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD84525387EDB00C0523F /* Misc.swift */; };
+		148DD84B253881F800C0523F /* TabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD84A253881F800C0523F /* TabbarCoordinator.swift */; };
+		148DD8512539CAA600C0523F /* RandomUsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD8502539CAA600C0523F /* RandomUsersApi.swift */; };
+		148DD8562539CAC000C0523F /* RandomUsersApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD8552539CAC000C0523F /* RandomUsersApiModel.swift */; };
+		148DD862253A0B8000C0523F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD861253A0B8000C0523F /* DataManager.swift */; };
+		148DD867253A0CE000C0523F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD866253A0CE000C0523F /* Constants.swift */; };
+		317F1771094137F3E5E66C3A /* Pods_lydia_test_lydia_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C112BE10FD662E1487DE954 /* Pods_lydia_test_lydia_testUITests.framework */; };
+		539FC4C4A3D10C7AB903BA42 /* Pods_lydia_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3A955C9037B530F427B943 /* Pods_lydia_testTests.framework */; };
+		C994D964670682865A7B322E /* Pods_lydia_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06A3F0E10886F0E747C7D37 /* Pods_lydia_test.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14447F0325379720008F953F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14447EE125379718008F953F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14447EE825379718008F953F;
+			remoteInfo = "lydia-test";
+		};
+		14447F0E25379720008F953F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14447EE125379718008F953F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14447EE825379718008F953F;
+			remoteInfo = "lydia-test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E3A955C9037B530F427B943 /* Pods_lydia_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lydia_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14447EE925379718008F953F /* lydia-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lydia-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14447EEC25379718008F953F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14447EF625379718008F953F /* lydia_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lydia_test.xcdatamodel; sourceTree = "<group>"; };
+		14447EF82537971F008F953F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14447EFB2537971F008F953F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14447EFD2537971F008F953F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14447F0225379720008F953F /* lydia-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lydia-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14447F0625379720008F953F /* lydia_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lydia_testTests.swift; sourceTree = "<group>"; };
+		14447F0825379720008F953F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14447F0D25379720008F953F /* lydia-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lydia-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14447F1125379720008F953F /* lydia_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lydia_testUITests.swift; sourceTree = "<group>"; };
+		14447F1325379720008F953F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14447F272537A1FA008F953F /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		14447F2F2537A219008F953F /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		14447F342537A236008F953F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		14447F392537A248008F953F /* RouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImp.swift; sourceTree = "<group>"; };
+		14447F422537A2A6008F953F /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		14447F472537A2B5008F953F /* ModuleFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryImp.swift; sourceTree = "<group>"; };
+		14447F4C2537A4F7008F953F /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		14447F512537A536008F953F /* CoordinatorFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryImp.swift; sourceTree = "<group>"; };
+		14447F572537A61E008F953F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		14447F622537A67B008F953F /* ContactsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListController.swift; sourceTree = "<group>"; };
+		14447F682537A6F7008F953F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		14447F702537A765008F953F /* ContactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCoordinator.swift; sourceTree = "<group>"; };
+		14447F752537A7C3008F953F /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		14447F7A2537A7D0008F953F /* ContactsListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewModelType.swift; sourceTree = "<group>"; };
+		14447F7F2537A85C008F953F /* ContactsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsController.swift; sourceTree = "<group>"; };
+		14447F842537A873008F953F /* ContactsDetailsViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsViewModelType.swift; sourceTree = "<group>"; };
+		144E0164253A38AD00684B3E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		144E016E253A391900684B3E /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		144E018C253A564F00684B3E /* NetworkActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
+		148DD81B2538672900C0523F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		148DD823253870F700C0523F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		148DD828253871C700C0523F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		148DD82D2538726F00C0523F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		148DD83C25387DCF00C0523F /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		148DD84525387EDB00C0523F /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		148DD84A253881F800C0523F /* TabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinator.swift; sourceTree = "<group>"; };
+		148DD8502539CAA600C0523F /* RandomUsersApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersApi.swift; sourceTree = "<group>"; };
+		148DD8552539CAC000C0523F /* RandomUsersApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersApiModel.swift; sourceTree = "<group>"; };
+		148DD861253A0B8000C0523F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		148DD866253A0CE000C0523F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3071347074B9B0CF1ED032B3 /* Pods-lydia-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lydia-testTests.debug.xcconfig"; path = "Target Support Files/Pods-lydia-testTests/Pods-lydia-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3935D9F5BB4FE934629D2DD5 /* Pods-lydia-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lydia-testTests.release.xcconfig"; path = "Target Support Files/Pods-lydia-testTests/Pods-lydia-testTests.release.xcconfig"; sourceTree = "<group>"; };
+		7889643BAE5D3E817E9DC1D3 /* Pods-lydia-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lydia-test.debug.xcconfig"; path = "Target Support Files/Pods-lydia-test/Pods-lydia-test.debug.xcconfig"; sourceTree = "<group>"; };
+		8C112BE10FD662E1487DE954 /* Pods_lydia_test_lydia_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lydia_test_lydia_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9743B4B4B26977ED6357D0D9 /* Pods-lydia-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lydia-test.release.xcconfig"; path = "Target Support Files/Pods-lydia-test/Pods-lydia-test.release.xcconfig"; sourceTree = "<group>"; };
+		A06A3F0E10886F0E747C7D37 /* Pods_lydia_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lydia_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D323CF0857D15543BAA66B43 /* Pods-lydia-test-lydia-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lydia-test-lydia-testUITests.debug.xcconfig"; path = "Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F39A84DDD0202BB0F06146DD /* Pods-lydia-test-lydia-testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lydia-test-lydia-testUITests.release.xcconfig"; path = "Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14447EE625379718008F953F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C994D964670682865A7B322E /* Pods_lydia_test.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14447EFF25379720008F953F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539FC4C4A3D10C7AB903BA42 /* Pods_lydia_testTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14447F0A25379720008F953F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317F1771094137F3E5E66C3A /* Pods_lydia_test_lydia_testUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07A832B05F708C05A77554BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7889643BAE5D3E817E9DC1D3 /* Pods-lydia-test.debug.xcconfig */,
+				9743B4B4B26977ED6357D0D9 /* Pods-lydia-test.release.xcconfig */,
+				D323CF0857D15543BAA66B43 /* Pods-lydia-test-lydia-testUITests.debug.xcconfig */,
+				F39A84DDD0202BB0F06146DD /* Pods-lydia-test-lydia-testUITests.release.xcconfig */,
+				3071347074B9B0CF1ED032B3 /* Pods-lydia-testTests.debug.xcconfig */,
+				3935D9F5BB4FE934629D2DD5 /* Pods-lydia-testTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		14447EE025379718008F953F = {
+			isa = PBXGroup;
+			children = (
+				14447EEB25379718008F953F /* lydia-test */,
+				14447F0525379720008F953F /* lydia-testTests */,
+				14447F1025379720008F953F /* lydia-testUITests */,
+				14447EEA25379718008F953F /* Products */,
+				07A832B05F708C05A77554BE /* Pods */,
+				28AB6DE1F5E8B1FE618D9E81 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14447EEA25379718008F953F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14447EE925379718008F953F /* lydia-test.app */,
+				14447F0225379720008F953F /* lydia-testTests.xctest */,
+				14447F0D25379720008F953F /* lydia-testUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14447EEB25379718008F953F /* lydia-test */ = {
+			isa = PBXGroup;
+			children = (
+				148DD860253A0B4100C0523F /* CoreData */,
+				148DD84F2539C7EC00C0523F /* Network */,
+				14447F252537A1DE008F953F /* Base */,
+				14447F3E2537A259008F953F /* Factories */,
+				14447F562537A606008F953F /* Flows */,
+				14447F672537A6E6008F953F /* Extensions */,
+				14447EEC25379718008F953F /* AppDelegate.swift */,
+				14447EF82537971F008F953F /* Assets.xcassets */,
+				14447EFA2537971F008F953F /* LaunchScreen.storyboard */,
+				14447EFD2537971F008F953F /* Info.plist */,
+				148DD866253A0CE000C0523F /* Constants.swift */,
+			);
+			path = "lydia-test";
+			sourceTree = "<group>";
+		};
+		14447F0525379720008F953F /* lydia-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				14447F0625379720008F953F /* lydia_testTests.swift */,
+				14447F0825379720008F953F /* Info.plist */,
+			);
+			path = "lydia-testTests";
+			sourceTree = "<group>";
+		};
+		14447F1025379720008F953F /* lydia-testUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14447F1125379720008F953F /* lydia_testUITests.swift */,
+				14447F1325379720008F953F /* Info.plist */,
+			);
+			path = "lydia-testUITests";
+			sourceTree = "<group>";
+		};
+		14447F252537A1DE008F953F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				14447F262537A1E6008F953F /* Router */,
+				14447F272537A1FA008F953F /* Base.swift */,
+				14447F2F2537A219008F953F /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		14447F262537A1E6008F953F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				14447F342537A236008F953F /* Router.swift */,
+				14447F392537A248008F953F /* RouterImp.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		14447F3E2537A259008F953F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				14447F402537A270008F953F /* Modules */,
+				14447F3F2537A267008F953F /* Coordinators */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		14447F3F2537A267008F953F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				14447F4C2537A4F7008F953F /* CoordinatorFactory.swift */,
+				14447F512537A536008F953F /* CoordinatorFactoryImp.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		14447F402537A270008F953F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				14447F422537A2A6008F953F /* ModuleFactory.swift */,
+				14447F472537A2B5008F953F /* ModuleFactoryImp.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		14447F562537A606008F953F /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				148DD81A2538671800C0523F /* Tabbar */,
+				14447F572537A61E008F953F /* AppCoordinator.swift */,
+				14447F5F2537A623008F953F /* Contacts */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		14447F5F2537A623008F953F /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				14447F602537A636008F953F /* List */,
+				14447F612537A63B008F953F /* Details */,
+				14447F702537A765008F953F /* ContactsCoordinator.swift */,
+				14447F752537A7C3008F953F /* ContactsViewModel.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		14447F602537A636008F953F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				14447F622537A67B008F953F /* ContactsListController.swift */,
+				14447F7A2537A7D0008F953F /* ContactsListViewModelType.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		14447F612537A63B008F953F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				14447F7F2537A85C008F953F /* ContactsDetailsController.swift */,
+				14447F842537A873008F953F /* ContactsDetailsViewModelType.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		14447F672537A6E6008F953F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14447F682537A6F7008F953F /* UIViewController.swift */,
+				148DD823253870F700C0523F /* UILabel.swift */,
+				148DD828253871C700C0523F /* UIColor.swift */,
+				148DD82D2538726F00C0523F /* UIView.swift */,
+				148DD83C25387DCF00C0523F /* UIImageView.swift */,
+				148DD84525387EDB00C0523F /* Misc.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		144E0163253A382F00684B3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				144E0164253A38AD00684B3E /* User+CoreDataClass.swift */,
+				144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		148DD81A2538671800C0523F /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				148DD81B2538672900C0523F /* TabbarController.swift */,
+				148DD84A253881F800C0523F /* TabbarCoordinator.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		148DD84F2539C7EC00C0523F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				148DD8502539CAA600C0523F /* RandomUsersApi.swift */,
+				148DD8552539CAC000C0523F /* RandomUsersApiModel.swift */,
+				144E018C253A564F00684B3E /* NetworkActivityManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		148DD860253A0B4100C0523F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				144E0163253A382F00684B3E /* Model */,
+				148DD861253A0B8000C0523F /* DataManager.swift */,
+				144E016E253A391900684B3E /* UserDataManager.swift */,
+				14447EF525379718008F953F /* lydia_test.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		28AB6DE1F5E8B1FE618D9E81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A06A3F0E10886F0E747C7D37 /* Pods_lydia_test.framework */,
+				8C112BE10FD662E1487DE954 /* Pods_lydia_test_lydia_testUITests.framework */,
+				0E3A955C9037B530F427B943 /* Pods_lydia_testTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14447EE825379718008F953F /* lydia-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14447F1625379720008F953F /* Build configuration list for PBXNativeTarget "lydia-test" */;
+			buildPhases = (
+				02BABB0B9A8B2A6FA26F49DC /* [CP] Check Pods Manifest.lock */,
+				14447EE525379718008F953F /* Sources */,
+				14447EE625379718008F953F /* Frameworks */,
+				14447EE725379718008F953F /* Resources */,
+				E71266BD572AAEA58177A99E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "lydia-test";
+			productName = "lydia-test";
+			productReference = 14447EE925379718008F953F /* lydia-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14447F0125379720008F953F /* lydia-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14447F1925379720008F953F /* Build configuration list for PBXNativeTarget "lydia-testTests" */;
+			buildPhases = (
+				A2957C32CC79AFB177230C68 /* [CP] Check Pods Manifest.lock */,
+				14447EFE25379720008F953F /* Sources */,
+				14447EFF25379720008F953F /* Frameworks */,
+				14447F0025379720008F953F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14447F0425379720008F953F /* PBXTargetDependency */,
+			);
+			name = "lydia-testTests";
+			productName = "lydia-testTests";
+			productReference = 14447F0225379720008F953F /* lydia-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14447F0C25379720008F953F /* lydia-testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14447F1C25379720008F953F /* Build configuration list for PBXNativeTarget "lydia-testUITests" */;
+			buildPhases = (
+				E54278D192488C617A00B332 /* [CP] Check Pods Manifest.lock */,
+				14447F0925379720008F953F /* Sources */,
+				14447F0A25379720008F953F /* Frameworks */,
+				14447F0B25379720008F953F /* Resources */,
+				7FC18DBCD42CAA07D9582C65 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14447F0F25379720008F953F /* PBXTargetDependency */,
+			);
+			name = "lydia-testUITests";
+			productName = "lydia-testUITests";
+			productReference = 14447F0D25379720008F953F /* lydia-testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14447EE125379718008F953F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					14447EE825379718008F953F = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					14447F0125379720008F953F = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 14447EE825379718008F953F;
+					};
+					14447F0C25379720008F953F = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 14447EE825379718008F953F;
+					};
+				};
+			};
+			buildConfigurationList = 14447EE425379718008F953F /* Build configuration list for PBXProject "lydia-test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14447EE025379718008F953F;
+			productRefGroup = 14447EEA25379718008F953F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14447EE825379718008F953F /* lydia-test */,
+				14447F0125379720008F953F /* lydia-testTests */,
+				14447F0C25379720008F953F /* lydia-testUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14447EE725379718008F953F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14447EFC2537971F008F953F /* LaunchScreen.storyboard in Resources */,
+				14447EF92537971F008F953F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14447F0025379720008F953F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14447F0B25379720008F953F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02BABB0B9A8B2A6FA26F49DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lydia-test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FC18DBCD42CAA07D9582C65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2957C32CC79AFB177230C68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lydia-testTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E54278D192488C617A00B332 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lydia-test-lydia-testUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E71266BD572AAEA58177A99E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lydia-test/Pods-lydia-test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lydia-test/Pods-lydia-test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lydia-test/Pods-lydia-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14447EE525379718008F953F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14447F432537A2A6008F953F /* ModuleFactory.swift in Sources */,
+				148DD829253871C700C0523F /* UIColor.swift in Sources */,
+				148DD82E2538726F00C0523F /* UIView.swift in Sources */,
+				14447F762537A7C3008F953F /* ContactsViewModel.swift in Sources */,
+				144E016F253A391900684B3E /* UserDataManager.swift in Sources */,
+				14447F632537A67B008F953F /* ContactsListController.swift in Sources */,
+				148DD867253A0CE000C0523F /* Constants.swift in Sources */,
+				14447F7B2537A7D0008F953F /* ContactsListViewModelType.swift in Sources */,
+				14447F582537A61E008F953F /* AppCoordinator.swift in Sources */,
+				14447F712537A765008F953F /* ContactsCoordinator.swift in Sources */,
+				14447F852537A873008F953F /* ContactsDetailsViewModelType.swift in Sources */,
+				148DD84625387EDB00C0523F /* Misc.swift in Sources */,
+				14447F3A2537A248008F953F /* RouterImp.swift in Sources */,
+				14447F482537A2B5008F953F /* ModuleFactoryImp.swift in Sources */,
+				14447F522537A536008F953F /* CoordinatorFactoryImp.swift in Sources */,
+				144E0166253A38AD00684B3E /* User+CoreDataClass.swift in Sources */,
+				144E0167253A38AD00684B3E /* User+CoreDataProperties.swift in Sources */,
+				148DD824253870F700C0523F /* UILabel.swift in Sources */,
+				148DD8512539CAA600C0523F /* RandomUsersApi.swift in Sources */,
+				14447EF725379718008F953F /* lydia_test.xcdatamodeld in Sources */,
+				14447F302537A219008F953F /* BaseNavigationController.swift in Sources */,
+				148DD862253A0B8000C0523F /* DataManager.swift in Sources */,
+				14447F352537A236008F953F /* Router.swift in Sources */,
+				14447F282537A1FA008F953F /* Base.swift in Sources */,
+				148DD84B253881F800C0523F /* TabbarCoordinator.swift in Sources */,
+				148DD81C2538672900C0523F /* TabbarController.swift in Sources */,
+				14447EED25379718008F953F /* AppDelegate.swift in Sources */,
+				144E018D253A564F00684B3E /* NetworkActivityManager.swift in Sources */,
+				148DD83D25387DCF00C0523F /* UIImageView.swift in Sources */,
+				148DD8562539CAC000C0523F /* RandomUsersApiModel.swift in Sources */,
+				14447F802537A85C008F953F /* ContactsDetailsController.swift in Sources */,
+				14447F4D2537A4F7008F953F /* CoordinatorFactory.swift in Sources */,
+				14447F692537A6F7008F953F /* UIViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14447EFE25379720008F953F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14447F0725379720008F953F /* lydia_testTests.swift in Sources */,
+				144E0184253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14447F0925379720008F953F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14447F1225379720008F953F /* lydia_testUITests.swift in Sources */,
+				144E0188253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14447F0425379720008F953F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14447EE825379718008F953F /* lydia-test */;
+			targetProxy = 14447F0325379720008F953F /* PBXContainerItemProxy */;
+		};
+		14447F0F25379720008F953F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14447EE825379718008F953F /* lydia-test */;
+			targetProxy = 14447F0E25379720008F953F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14447EFA2537971F008F953F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14447EFB2537971F008F953F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14447F1425379720008F953F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14447F1525379720008F953F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14447F1725379720008F953F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7889643BAE5D3E817E9DC1D3 /* Pods-lydia-test.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJG75689M4;
+				INFOPLIST_FILE = "lydia-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14447F1825379720008F953F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9743B4B4B26977ED6357D0D9 /* Pods-lydia-test.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJG75689M4;
+				INFOPLIST_FILE = "lydia-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14447F1A25379720008F953F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3071347074B9B0CF1ED032B3 /* Pods-lydia-testTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJG75689M4;
+				INFOPLIST_FILE = "lydia-testTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lydia-test.app/lydia-test";
+			};
+			name = Debug;
+		};
+		14447F1B25379720008F953F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3935D9F5BB4FE934629D2DD5 /* Pods-lydia-testTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJG75689M4;
+				INFOPLIST_FILE = "lydia-testTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lydia-test.app/lydia-test";
+			};
+			name = Release;
+		};
+		14447F1D25379720008F953F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D323CF0857D15543BAA66B43 /* Pods-lydia-test-lydia-testUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJG75689M4;
+				INFOPLIST_FILE = "lydia-testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "lydia-test";
+			};
+			name = Debug;
+		};
+		14447F1E25379720008F953F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39A84DDD0202BB0F06146DD /* Pods-lydia-test-lydia-testUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJG75689M4;
+				INFOPLIST_FILE = "lydia-testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "lydia-test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14447EE425379718008F953F /* Build configuration list for PBXProject "lydia-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14447F1425379720008F953F /* Debug */,
+				14447F1525379720008F953F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14447F1625379720008F953F /* Build configuration list for PBXNativeTarget "lydia-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14447F1725379720008F953F /* Debug */,
+				14447F1825379720008F953F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14447F1925379720008F953F /* Build configuration list for PBXNativeTarget "lydia-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14447F1A25379720008F953F /* Debug */,
+				14447F1B25379720008F953F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14447F1C25379720008F953F /* Build configuration list for PBXNativeTarget "lydia-testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14447F1D25379720008F953F /* Debug */,
+				14447F1E25379720008F953F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14447EF525379718008F953F /* lydia_test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14447EF625379718008F953F /* lydia_test.xcdatamodel */,
+			);
+			currentVersion = 14447EF625379718008F953F /* lydia_test.xcdatamodel */;
+			path = lydia_test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 14447EE125379718008F953F /* Project object */;
+}
