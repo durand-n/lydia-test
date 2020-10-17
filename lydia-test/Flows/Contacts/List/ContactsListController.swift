@@ -18,11 +18,21 @@ class ContactsListController: UIViewController, ContactsListView {
     
     private var viewModel: ContactsListViewModelType
     private var tableView = UITableView()
+    private let spinner = UIActivityIndicatorView(style: .medium)
+    private var emptyView = EmptyView()
     
     init(viewModel: ContactsListViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel.didInsert = self.didInsert
+        self.viewModel.onInsert = self.didInsert
+        self.viewModel.onDataLoaded = self.didLoad
+        self.viewModel.onShowError = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.tableView.tableFooterView = nil
+            }
+            self?.showError(message: message)
+        }
+        self.emptyView.onRetry = viewModel.startFetchingUsers
     }
     
     required init?(coder: NSCoder) {
@@ -32,10 +42,12 @@ class ContactsListController: UIViewController, ContactsListView {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if let users = DataManager.shared.users {
-            print(users.count)
+        view.addSubviews([emptyView, tableView])
+        
+        emptyView.snp.makeConstraints { cm in
+            cm.edges.equalToSuperview()
         }
-        view.addSubviews([tableView])
+        
         tableView.snp.makeConstraints { cm in
             cm.edges.equalToSuperview()
         }
@@ -44,7 +56,7 @@ class ContactsListController: UIViewController, ContactsListView {
         tableView.dataSource = self
         
         
-        //viewModel.fetchNextUsers()
+        viewModel.startFetchingUsers()
     }
     
     func scrollListToTop() {
@@ -55,7 +67,15 @@ class ContactsListController: UIViewController, ContactsListView {
 
 extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.userCount
+        let count = viewModel.userCount
+        if count == 0 {
+            tableView.fadeOut()
+            emptyView.play()
+        } else {
+            tableView.fadeIn()
+            emptyView.stop()
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,11 +87,26 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == viewModel.userCount - 1 {
-            viewModel.fetchNextUsers()
+            spinner.frame = CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 70)
+            spinner.startAnimating()
+
+            self.tableView.tableFooterView = spinner
+            self.tableView.tableFooterView?.isHidden = false
+            #warning("remove before commit")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.viewModel.fetchNextUsers()
+            }
+        }
+    }
+    
+    func didLoad() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
     func didInsert(_ rowCount: Int) {
+        guard rowCount > 0 else { return }
         DispatchQueue.main.async {
             let startIndex = self.tableView.numberOfRows(inSection: 0)
             var indexs = [IndexPath]()
@@ -79,8 +114,8 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
                 indexs.append(IndexPath(row: index, section: 0))
             }
             self.tableView.insertRows(at: indexs, with: .automatic)
+            self.tableView.tableFooterView = nil
         }
-        
     }
     
 }

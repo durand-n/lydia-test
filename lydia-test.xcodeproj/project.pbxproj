@@ -35,6 +35,9 @@
 		144E0184253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
 		144E0188253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
 		144E018D253A564F00684B3E /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E018C253A564F00684B3E /* NetworkActivityManager.swift */; };
+		1485A60C253B8673005F56ED /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A60B253B8673005F56ED /* EmptyView.swift */; };
+		1485A623253B87F9005F56ED /* sad-anim.json in Resources */ = {isa = PBXBuildFile; fileRef = 1485A622253B87F9005F56ED /* sad-anim.json */; };
+		1485A62E253BADD1005F56ED /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A62D253BADD1005F56ED /* UIButton.swift */; };
 		148DD81C2538672900C0523F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD81B2538672900C0523F /* TabbarController.swift */; };
 		148DD824253870F700C0523F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD823253870F700C0523F /* UILabel.swift */; };
 		148DD829253871C700C0523F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD828253871C700C0523F /* UIColor.swift */; };
@@ -102,6 +105,9 @@
 		144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		144E016E253A391900684B3E /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		144E018C253A564F00684B3E /* NetworkActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
+		1485A60B253B8673005F56ED /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		1485A622253B87F9005F56ED /* sad-anim.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sad-anim.json"; sourceTree = "<group>"; };
+		1485A62D253BADD1005F56ED /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		148DD81B2538672900C0523F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		148DD823253870F700C0523F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		148DD828253871C700C0523F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -189,6 +195,10 @@
 		14447EEB25379718008F953F /* lydia-test */ = {
 			isa = PBXGroup;
 			children = (
+				14447EFD2537971F008F953F /* Info.plist */,
+				1485A622253B87F9005F56ED /* sad-anim.json */,
+				1485A618253B87CB005F56ED /* Resources */,
+				1485A60A253B8662005F56ED /* UIElements */,
 				148DD860253A0B4100C0523F /* CoreData */,
 				148DD84F2539C7EC00C0523F /* Network */,
 				14447F252537A1DE008F953F /* Base */,
@@ -196,9 +206,6 @@
 				14447F562537A606008F953F /* Flows */,
 				14447F672537A6E6008F953F /* Extensions */,
 				14447EEC25379718008F953F /* AppDelegate.swift */,
-				14447EF82537971F008F953F /* Assets.xcassets */,
-				14447EFA2537971F008F953F /* LaunchScreen.storyboard */,
-				14447EFD2537971F008F953F /* Info.plist */,
 				148DD866253A0CE000C0523F /* Constants.swift */,
 			);
 			path = "lydia-test";
@@ -316,6 +323,7 @@
 				148DD82D2538726F00C0523F /* UIView.swift */,
 				148DD83C25387DCF00C0523F /* UIImageView.swift */,
 				148DD84525387EDB00C0523F /* Misc.swift */,
+				1485A62D253BADD1005F56ED /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +335,23 @@
 				144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1485A60A253B8662005F56ED /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				1485A60B253B8673005F56ED /* EmptyView.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		1485A618253B87CB005F56ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14447EFA2537971F008F953F /* LaunchScreen.storyboard */,
+				14447EF82537971F008F953F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		148DD81A2538671800C0523F /* Tabbar */ = {
@@ -477,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1485A623253B87F9005F56ED /* sad-anim.json in Resources */,
 				14447EFC2537971F008F953F /* LaunchScreen.storyboard in Resources */,
 				14447EF92537971F008F953F /* Assets.xcassets in Resources */,
 			);
@@ -630,6 +656,8 @@
 				148DD862253A0B8000C0523F /* DataManager.swift in Sources */,
 				14447F352537A236008F953F /* Router.swift in Sources */,
 				14447F282537A1FA008F953F /* Base.swift in Sources */,
+				1485A60C253B8673005F56ED /* EmptyView.swift in Sources */,
+				1485A62E253BADD1005F56ED /* UIButton.swift in Sources */,
 				148DD84B253881F800C0523F /* TabbarCoordinator.swift in Sources */,
 				148DD81C2538672900C0523F /* TabbarController.swift in Sources */,
 				14447EED25379718008F953F /* AppDelegate.swift in Sources */,

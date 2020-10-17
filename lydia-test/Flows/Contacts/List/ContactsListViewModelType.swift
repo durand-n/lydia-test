@@ -8,11 +8,14 @@
 import UIKit
 
 protocol ContactsListViewModelType {
-    var didInsert: ((Int) -> Void)? { get set }
+    var onInsert: ((Int) -> Void)? { get set }
+    var onDataLoaded: (() -> Void)? { get set }
+    var onShowError: ((String) -> Void)? { get set }
     var userCount: Int { get }
     
     func dataFor(row: Int) -> ContactItemRepresentable?
     func fetchNextUsers()
+    func startFetchingUsers()
 }
 
 

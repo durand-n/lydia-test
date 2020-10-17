@@ -8,8 +8,11 @@
 import Foundation
 
 class ContactsViewModel: ContactsListViewModelType {
+    
     // MARK - protocol compliance
-    var didInsert: ((Int) -> Void)?
+    var onInsert: ((Int) -> Void)?
+    var onDataLoaded: (() -> Void)?
+    var onShowError: ((String) -> Void)?
     
     private var users: [User] {
         didSet {
@@ -22,11 +25,28 @@ class ContactsViewModel: ContactsListViewModelType {
         self.userCount = self.users.count
     }
     
-    func fetchNextUsers() {
-        DataManager.shared.getNextContacts { (newUsers) in
+    func startFetchingUsers() {
+        // If users count is enough to display full page of contacts, do nothing
+        guard userCount < 20 else { return }
+        Loader.show()
+        DataManager.shared.getFirstContacts { newUsers, error  in
+            Loader.hide()
             if let users = newUsers {
                 self.users.append(contentsOf: users)
-                self.didInsert?(users.count)
+                self.onDataLoaded?()
+            } else {
+                self.onShowError?("Une erreur est survenue, merci de réessayer plus tard")
+            }
+        }
+    }
+    
+    func fetchNextUsers() {
+        DataManager.shared.getNextContacts { newUsers, error in
+            if let users = newUsers {
+                self.users.append(contentsOf: users)
+                self.onInsert?(users.count)
+            } else {
+                self.onShowError?("Une erreur est survenue, merci de réessayer plus tard")
             }
         }
     }

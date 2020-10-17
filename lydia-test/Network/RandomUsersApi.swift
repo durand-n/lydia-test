@@ -15,7 +15,7 @@ extension RandomUsersApiRoutes {
     var path: String {
         switch self {
         case .Listing(page: let page):
-            return "https://randomuser.me/api/?results=\(Constants.PAGINATION_NUMBER)&seed=lydia&page=\(page)"
+            return "https://randomuserr.me/api/?results=\(Constants.PAGINATION_NUMBER)&seed=lydia&page=\(page)"
         }
     }
 }

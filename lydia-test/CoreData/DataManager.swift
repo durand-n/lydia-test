@@ -55,21 +55,46 @@ class DataManager {
     
     // MARK - public methods and properties
     
-    func getNextContacts(completion: @escaping ([User]?) -> Void) {
+    // fetch 2 series of users in order to display a full page
+    func getFirstContacts(completion: @escaping ([User]?, Error?) -> Void) {
+        getNextContacts { users, error  in
+            if let firstUsers = users {
+                // delay is needed to prevent coreData mixup
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.getNextContacts { users, error in
+                        if let users = users {
+                            completion(firstUsers + users, nil)
+                        } else {
+                            completion(nil, error)
+                        }
+                    }
+                }
+            } else {
+                completion(nil, error)
+            }
+
+        }
+    }
+    
+    // fetch next series of contacts
+    func getNextContacts(completion: @escaping ([User]?, Error?) -> Void) {
         api.getListing(page: index) { (result, error) in
             if let users = result?.users {
                 self.index += 1
                 do {
                     let contacts = try self.userManager.insertMany(users)
-                    completion(contacts)
+                    completion(contacts, nil)
                 } catch {
                     print("An error occurred while creating users: \(error)")
-                    completion(nil)
+                    completion(nil, error)
                 }
+            } else {
+                completion(nil, error)
             }
         }
     }
     
+    // remove every users in Coredata storage
     func removeContacts() {
         try? self.userManager.drop()
     }

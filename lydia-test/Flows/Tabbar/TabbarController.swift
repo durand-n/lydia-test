@@ -134,12 +134,13 @@ class TabbarController: UITabBarController, TabbarView {
         }
         
         networkConnectedBannerView?.isHidden = true
-        networkDisconnectedBannerView?.isHidden = true
+        networkDisconnectedBannerView?.isHidden = NetworkActivityManager.shared.isConnected
         
     }
     
     @objc private func didConnect() {
-        print("connect")
+        // if disconnected banner was not shown, no need to show re-connected banner
+        guard !(self.networkDisconnectedBannerView?.isHidden ?? true) else { return }
         let group = DispatchGroup()
         
         group.enter()

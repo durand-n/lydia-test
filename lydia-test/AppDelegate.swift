@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         #if DEBUG
             UserDefaults.standard.removeObject(forKey: Constants.CachedItems.lastPageLoaded.rawValue)
-//        DataManager.shared.removeContacts()
+            DataManager.shared.removeContacts()
         #endif
         
         // Connectivity tracking
