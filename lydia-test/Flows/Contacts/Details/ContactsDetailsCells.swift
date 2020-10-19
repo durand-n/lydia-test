@@ -10,7 +10,7 @@ import MapKit
 
 class ContactIdentityCell: UITableViewCell {
     private var userImageView = UIImageView(image: nil, contentMode: .scaleAspectFill)
-    private var nameLabel = UILabel(title: "Scarlett Jones", type: .bold, color: .text, size: 22, lines: 1, alignment: .center)
+    private var nameLabel = UILabel(title: "Scarlett Jones", type: .bold, color: .label, size: 22, lines: 1, alignment: .center)
     private var bdLabel = UILabel(title: "29 ans - né(e) le 10/03/1991", type: .medium, color: .gray, size: 16, lines: 1, alignment: .center)
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

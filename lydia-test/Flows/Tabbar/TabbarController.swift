@@ -55,11 +55,11 @@ class TabbarController: UITabBarController, TabbarView {
         self.view.backgroundColor = .white
         let contactsNavigationController = UINavigationController()
         contactsNavigationController.interactivePopGestureRecognizer?.isEnabled = true
-        contactsNavigationController.tabBarItem = UITabBarItem(title: "contacts", image: nil, tag: Index.contacts.rawValue)
+        contactsNavigationController.tabBarItem = UITabBarItem(title: "contacts", image: UIImage(systemName: "person.3"), tag: Index.contacts.rawValue)
         
         let favoritesNavigationController = UINavigationController()
         favoritesNavigationController.interactivePopGestureRecognizer?.isEnabled = true
-        favoritesNavigationController.tabBarItem = UITabBarItem(title: "favoris", image: nil, tag: Index.favorites.rawValue)
+        favoritesNavigationController.tabBarItem = UITabBarItem(title: "Favoris", image: UIImage(systemName: "suit.heart"), tag: Index.favorites.rawValue)
         
         
         tabBar.tintColor = .secondary

@@ -14,7 +14,6 @@
 		14447EF92537971F008F953F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14447EF82537971F008F953F /* Assets.xcassets */; };
 		14447EFC2537971F008F953F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14447EFA2537971F008F953F /* LaunchScreen.storyboard */; };
 		14447F0725379720008F953F /* lydia_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F0625379720008F953F /* lydia_testTests.swift */; };
-		14447F1225379720008F953F /* lydia_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F1125379720008F953F /* lydia_testUITests.swift */; };
 		14447F282537A1FA008F953F /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F272537A1FA008F953F /* Base.swift */; };
 		14447F302537A219008F953F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F2F2537A219008F953F /* BaseNavigationController.swift */; };
 		14447F352537A236008F953F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F342537A236008F953F /* Router.swift */; };
@@ -30,11 +29,13 @@
 		14447F762537A7C3008F953F /* ContactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F752537A7C3008F953F /* ContactsListViewModel.swift */; };
 		14447F802537A85C008F953F /* ContactsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F7F2537A85C008F953F /* ContactsDetailsController.swift */; };
 		14447F852537A873008F953F /* ContactsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F842537A873008F953F /* ContactsDetailsViewModel.swift */; };
+		1446994D253D3BB300FC1713 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446994C253D3BB300FC1713 /* FavoritesController.swift */; };
+		14469951253D3BBD00FC1713 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14469950253D3BBD00FC1713 /* FavoritesCoordinator.swift */; };
+		14469955253D3CF100FC1713 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14469954253D3CF100FC1713 /* FavoritesViewModel.swift */; };
 		144E0166253A38AD00684B3E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E0164253A38AD00684B3E /* User+CoreDataClass.swift */; };
 		144E0167253A38AD00684B3E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */; };
 		144E016F253A391900684B3E /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E016E253A391900684B3E /* UserDataManager.swift */; };
 		144E0184253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
-		144E0188253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
 		144E018D253A564F00684B3E /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E018C253A564F00684B3E /* NetworkActivityManager.swift */; };
 		14557319253CC0A100DC7F29 /* ContactsDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14557318253CC0A100DC7F29 /* ContactsDetailsCells.swift */; };
 		14557323253D052900DC7F29 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14557322253D052900DC7F29 /* Date.swift */; };
@@ -52,20 +53,12 @@
 		148DD8562539CAC000C0523F /* RandomUsersApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD8552539CAC000C0523F /* RandomUsersApiModel.swift */; };
 		148DD862253A0B8000C0523F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD861253A0B8000C0523F /* DataManager.swift */; };
 		148DD867253A0CE000C0523F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148DD866253A0CE000C0523F /* Constants.swift */; };
-		317F1771094137F3E5E66C3A /* Pods_lydia_test_lydia_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C112BE10FD662E1487DE954 /* Pods_lydia_test_lydia_testUITests.framework */; };
 		539FC4C4A3D10C7AB903BA42 /* Pods_lydia_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3A955C9037B530F427B943 /* Pods_lydia_testTests.framework */; };
 		C994D964670682865A7B322E /* Pods_lydia_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06A3F0E10886F0E747C7D37 /* Pods_lydia_test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		14447F0325379720008F953F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14447EE125379718008F953F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14447EE825379718008F953F;
-			remoteInfo = "lydia-test";
-		};
-		14447F0E25379720008F953F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14447EE125379718008F953F /* Project object */;
 			proxyType = 1;
@@ -87,9 +80,6 @@
 		14447F0225379720008F953F /* lydia-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lydia-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14447F0625379720008F953F /* lydia_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lydia_testTests.swift; sourceTree = "<group>"; };
 		14447F0825379720008F953F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14447F0D25379720008F953F /* lydia-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lydia-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14447F1125379720008F953F /* lydia_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lydia_testUITests.swift; sourceTree = "<group>"; };
-		14447F1325379720008F953F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14447F272537A1FA008F953F /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		14447F2F2537A219008F953F /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		14447F342537A236008F953F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -105,6 +95,9 @@
 		14447F752537A7C3008F953F /* ContactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewModel.swift; sourceTree = "<group>"; };
 		14447F7F2537A85C008F953F /* ContactsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsController.swift; sourceTree = "<group>"; };
 		14447F842537A873008F953F /* ContactsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsViewModel.swift; sourceTree = "<group>"; };
+		1446994C253D3BB300FC1713 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		14469950253D3BBD00FC1713 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		14469954253D3CF100FC1713 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		144E0164253A38AD00684B3E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		144E016E253A391900684B3E /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
@@ -152,14 +145,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14447F0A25379720008F953F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				317F1771094137F3E5E66C3A /* Pods_lydia_test_lydia_testUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -181,7 +166,6 @@
 			children = (
 				14447EEB25379718008F953F /* lydia-test */,
 				14447F0525379720008F953F /* lydia-testTests */,
-				14447F1025379720008F953F /* lydia-testUITests */,
 				14447EEA25379718008F953F /* Products */,
 				07A832B05F708C05A77554BE /* Pods */,
 				28AB6DE1F5E8B1FE618D9E81 /* Frameworks */,
@@ -193,7 +177,6 @@
 			children = (
 				14447EE925379718008F953F /* lydia-test.app */,
 				14447F0225379720008F953F /* lydia-testTests.xctest */,
-				14447F0D25379720008F953F /* lydia-testUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,15 +207,6 @@
 				14447F0825379720008F953F /* Info.plist */,
 			);
 			path = "lydia-testTests";
-			sourceTree = "<group>";
-		};
-		14447F1025379720008F953F /* lydia-testUITests */ = {
-			isa = PBXGroup;
-			children = (
-				14447F1125379720008F953F /* lydia_testUITests.swift */,
-				14447F1325379720008F953F /* Info.plist */,
-			);
-			path = "lydia-testUITests";
 			sourceTree = "<group>";
 		};
 		14447F252537A1DE008F953F /* Base */ = {
@@ -284,9 +258,10 @@
 		14447F562537A606008F953F /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				14447F5F2537A623008F953F /* Contacts */,
+				1446994B253D3BA600FC1713 /* Favorites */,
 				148DD81A2538671800C0523F /* Tabbar */,
 				14447F572537A61E008F953F /* AppCoordinator.swift */,
-				14447F5F2537A623008F953F /* Contacts */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -335,6 +310,16 @@
 				14557322253D052900DC7F29 /* Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1446994B253D3BA600FC1713 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				1446994C253D3BB300FC1713 /* FavoritesController.swift */,
+				14469950253D3BBD00FC1713 /* FavoritesCoordinator.swift */,
+				14469954253D3CF100FC1713 /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		144E0163253A382F00684B3E /* Model */ = {
@@ -444,26 +429,6 @@
 			productReference = 14447F0225379720008F953F /* lydia-testTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		14447F0C25379720008F953F /* lydia-testUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14447F1C25379720008F953F /* Build configuration list for PBXNativeTarget "lydia-testUITests" */;
-			buildPhases = (
-				E54278D192488C617A00B332 /* [CP] Check Pods Manifest.lock */,
-				14447F0925379720008F953F /* Sources */,
-				14447F0A25379720008F953F /* Frameworks */,
-				14447F0B25379720008F953F /* Resources */,
-				7FC18DBCD42CAA07D9582C65 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				14447F0F25379720008F953F /* PBXTargetDependency */,
-			);
-			name = "lydia-testUITests";
-			productName = "lydia-testUITests";
-			productReference = 14447F0D25379720008F953F /* lydia-testUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -477,10 +442,6 @@
 						CreatedOnToolsVersion = 12.0.1;
 					};
 					14447F0125379720008F953F = {
-						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = 14447EE825379718008F953F;
-					};
-					14447F0C25379720008F953F = {
 						CreatedOnToolsVersion = 12.0.1;
 						TestTargetID = 14447EE825379718008F953F;
 					};
@@ -501,7 +462,6 @@
 			targets = (
 				14447EE825379718008F953F /* lydia-test */,
 				14447F0125379720008F953F /* lydia-testTests */,
-				14447F0C25379720008F953F /* lydia-testUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -518,13 +478,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		14447F0025379720008F953F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14447F0B25379720008F953F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -556,23 +509,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FC18DBCD42CAA07D9582C65 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lydia-test-lydia-testUITests/Pods-lydia-test-lydia-testUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A2957C32CC79AFB177230C68 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -589,28 +525,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-lydia-testTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E54278D192488C617A00B332 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-lydia-test-lydia-testUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -645,7 +559,9 @@
 				148DD829253871C700C0523F /* UIColor.swift in Sources */,
 				148DD82E2538726F00C0523F /* UIView.swift in Sources */,
 				141B8BF2253C565E00C27944 /* UITableView.swift in Sources */,
+				14469951253D3BBD00FC1713 /* FavoritesCoordinator.swift in Sources */,
 				14447F762537A7C3008F953F /* ContactsListViewModel.swift in Sources */,
+				1446994D253D3BB300FC1713 /* FavoritesController.swift in Sources */,
 				141B8BED253C53B900C27944 /* ContactsListCell.swift in Sources */,
 				144E016F253A391900684B3E /* UserDataManager.swift in Sources */,
 				14447F632537A67B008F953F /* ContactsListController.swift in Sources */,
@@ -671,6 +587,7 @@
 				148DD84B253881F800C0523F /* TabbarCoordinator.swift in Sources */,
 				148DD81C2538672900C0523F /* TabbarController.swift in Sources */,
 				14447EED25379718008F953F /* AppDelegate.swift in Sources */,
+				14469955253D3CF100FC1713 /* FavoritesViewModel.swift in Sources */,
 				144E018D253A564F00684B3E /* NetworkActivityManager.swift in Sources */,
 				148DD83D25387DCF00C0523F /* UIImageView.swift in Sources */,
 				148DD8562539CAC000C0523F /* RandomUsersApiModel.swift in Sources */,
@@ -691,15 +608,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14447F0925379720008F953F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14447F1225379720008F953F /* lydia_testUITests.swift in Sources */,
-				144E0188253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -707,11 +615,6 @@
 			isa = PBXTargetDependency;
 			target = 14447EE825379718008F953F /* lydia-test */;
 			targetProxy = 14447F0325379720008F953F /* PBXContainerItemProxy */;
-		};
-		14447F0F25379720008F953F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 14447EE825379718008F953F /* lydia-test */;
-			targetProxy = 14447F0E25379720008F953F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -852,11 +755,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJG75689M4;
 				INFOPLIST_FILE = "lydia-test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lydia-test.ben.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.lydia-test.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -872,11 +776,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJG75689M4;
 				INFOPLIST_FILE = "lydia-test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lydia-test.ben.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.lydia-test.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -929,48 +834,6 @@
 			};
 			name = Release;
 		};
-		14447F1D25379720008F953F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D323CF0857D15543BAA66B43 /* Pods-lydia-test-lydia-testUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GJG75689M4;
-				INFOPLIST_FILE = "lydia-testUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-testUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "lydia-test";
-			};
-			name = Debug;
-		};
-		14447F1E25379720008F953F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F39A84DDD0202BB0F06146DD /* Pods-lydia-test-lydia-testUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GJG75689M4;
-				INFOPLIST_FILE = "lydia-testUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-testUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "lydia-test";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -997,15 +860,6 @@
 			buildConfigurations = (
 				14447F1A25379720008F953F /* Debug */,
 				14447F1B25379720008F953F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14447F1C25379720008F953F /* Build configuration list for PBXNativeTarget "lydia-testUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14447F1D25379720008F953F /* Debug */,
-				14447F1E25379720008F953F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

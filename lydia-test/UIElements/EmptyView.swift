@@ -9,12 +9,14 @@ import UIKit
 import Lottie
 
 class EmptyView: UIView {
-    private var titleLabel = UILabel(title: "Aucune donnée", type: .bold, color: .black, size: 16, lines: 0, alignment: .center)
+    private var titleLabel: UILabel
     private var sadAnim: AnimationView
     private var retryButton = UIButton(title: "Réessayer", font: .bold, fontSize: 14, textColor: .secondary, backgroundColor: .primary)
     var onRetry: (() -> Void)?
     
-    init() {
+    init(title: String, showButton: Bool = true) {
+        titleLabel = UILabel(title: title, type: .bold, color: .label, size: 16, lines: 0, alignment: .center)
+        retryButton.isHidden = !showButton
         sadAnim = AnimationView(animation: Animation.named("sad-anim", bundle: Bundle.main))
         super.init(frame: .zero)
         let container = UIView(backgroundColor: .clear)

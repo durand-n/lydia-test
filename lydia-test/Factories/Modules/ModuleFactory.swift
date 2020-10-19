@@ -13,3 +13,8 @@ protocol ContactsModuleFactory {
     func makeContactsListController(viewModel: ContactsListViewModelType) -> ContactsListView
     func makeContactsDetailsController(viewModel: ContactsDetailsViewModelType) -> ContactsDetailsView
 }
+
+protocol FavoritesModuleFactory {
+    func makeFavoritesView(viewModel: FavoritesViewModelType) -> FavoritesView
+    func makeContactsDetailsController(viewModel: ContactsDetailsViewModelType) -> ContactsDetailsView
+}

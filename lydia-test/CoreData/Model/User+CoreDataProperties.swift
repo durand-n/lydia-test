@@ -30,5 +30,6 @@ extension User {
     @NSManaged public var birthdate: Date
     @NSManaged public var email: String
     @NSManaged public var cell: String
+    @NSManaged public var isFavorite: Bool
 
 }

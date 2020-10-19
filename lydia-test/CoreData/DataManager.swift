@@ -8,8 +8,17 @@
 import Foundation
 import CoreData
 
-class DataManager {
-    private var userManager: UserDataManager
+protocol DataManagerProtocol {
+    func getFirstContacts(completion: @escaping ([User]?, Error?) -> Void)
+    func getNextContacts(completion: @escaping ([User]?, Error?) -> Void)
+    func saveModifications()
+    func removeContacts()
+    
+    var users: [User]? { get }
+}
+
+class DataManager: DataManagerProtocol {
+    var userManager: UserDataManager
     private var container: NSPersistentContainer
     private var index: UInt {
         didSet {
@@ -17,13 +26,13 @@ class DataManager {
         }
     }
     
-    static var shared = DataManager()
     private var api = RandomUsersApiImp()
     
-    private init() {
+    init(container: NSPersistentContainer) {
+        
         index = UserDefaults.standard.value(forKey: Constants.CachedItems.lastPageLoaded.rawValue) as? UInt ?? 1
         // Core Data initialisation
-        container = NSPersistentContainer(name: "lydia_test")
+        self.container = container
 
         userManager = UserDataManager(container: container)
         container.loadPersistentStores { _, error in
@@ -32,9 +41,6 @@ class DataManager {
             } else {
                 self.userManager.fetchUser()
             }
-        }
-        if index == 1 {
-            //REMOVE ALL
         }
     }
     
@@ -101,5 +107,9 @@ class DataManager {
     
     var users: [User]? {
         return userManager.users
+    }
+    
+    func saveModifications() {
+        self.saveContext()
     }
 }

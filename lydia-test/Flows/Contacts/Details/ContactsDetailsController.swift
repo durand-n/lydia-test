@@ -6,16 +6,21 @@
 //
 
 import UIKit
+import ContactsUI
 
 protocol ContactsDetailsView: BaseView {
     var onPhone: ((String) -> Void)? { get set }
+    var onAdd: ((CNMutableContact) -> Void)? { get set }
 }
 
 class ContactsDetailsController: UIViewController, ContactsDetailsView {
+    var onAdd: ((CNMutableContact) -> Void)?
     var onPhone: ((String) -> Void)?
     
     private var viewModel: ContactsDetailsViewModelType
     private var tableView = UITableView()
+    private var addButton: UIBarButtonItem?
+    private var likeButton: UIBarButtonItem?
     
     init(viewModel: ContactsDetailsViewModelType) {
         self.viewModel = viewModel
@@ -34,6 +39,13 @@ class ContactsDetailsController: UIViewController, ContactsDetailsView {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.separatorColor = .clear
+        addButton = UIBarButtonItem(image:  UIImage(systemName: "person.crop.circle.badge.plus"), style: .plain, target: self, action: #selector(addToContacts))
+        likeButton = UIBarButtonItem(image: UIImage(systemName: viewModel.isFavorite ? "heart.fill" : "heart"), style: .plain, target: self, action: #selector(setAsFavorite))
+
+        if let like = likeButton, let add = addButton {
+            navigationItem.rightBarButtonItems = [add, like]
+        }
+
         for cellType in ContactsDetailsCellType.allCases {
             tableView.registerCellClass(cellType.type)
         }
@@ -44,6 +56,16 @@ class ContactsDetailsController: UIViewController, ContactsDetailsView {
         tableView.snp.makeConstraints { cm in
             cm.edges.equalToSuperview()
         }
+    }
+    
+    @objc func addToContacts() {
+        let contact = viewModel.getContact()
+        self.onAdd?(contact)
+    }
+    
+    @objc func setAsFavorite() {
+        viewModel.setAsFavorite(!viewModel.isFavorite)
+        likeButton?.image = UIImage(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
     }
 }
 

@@ -7,20 +7,26 @@
 
 import Foundation
 import CoreLocation
+import ContactsUI
 
 protocol ContactsDetailsViewModelType {
     var phoneNumber: String { get }
     var cellularNumber: String { get }
     var email: String { get }
+    var isFavorite: Bool { get }
     
     func getData<T: ContactsDetailsRepresentable>() -> T
+    func getContact() -> CNMutableContact
+    func setAsFavorite(_ isFavorite: Bool)
 }
 
 class ContactsDetailsViewModel: ContactsDetailsViewModelType {
     private var user: User
+    private var dataManager: DataManagerProtocol
     
-    init(user: User) {
+    init(user: User, dataManager: DataManagerProtocol) {
         self.user = user
+        self.dataManager = dataManager
     }
     
     
@@ -38,8 +44,28 @@ class ContactsDetailsViewModel: ContactsDetailsViewModelType {
         return user.email
     }
     
+    var isFavorite: Bool {
+        return user.isFavorite
+    }
+    
     func getData<T: ContactsDetailsRepresentable>() -> T {
         return T(self.user)
+    }
+    
+    func getContact() -> CNMutableContact {
+        let contact = CNMutableContact()
+        
+        contact.givenName = user.firstName
+        contact.familyName = user.lastName
+        contact.phoneNumbers = [CNLabeledValue(label: "Domicile", value: CNPhoneNumber(stringValue: user.phone)), CNLabeledValue(label: "Portable", value: CNPhoneNumber(stringValue: user.cell))]
+        contact.emailAddresses = [CNLabeledValue(label: "personnel", value: user.email as NSString)]
+        contact.note = "importé depuis Lydia-Test"
+        return contact
+    }
+    
+    func setAsFavorite(_ isFavorite: Bool) {
+        user.isFavorite.toggle()
+        dataManager.saveModifications()
     }
 }
 

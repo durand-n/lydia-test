@@ -22,7 +22,7 @@ public class ApplicationCoordinator: BaseCoordinator {
     }
 
     private func startContactsFlow() {
-        var tabBarCoordinator = coordinatorFactory.makeTabBarCoordinator(coordinatorFactory: coordinatorFactory, router: router)
+        let tabBarCoordinator = coordinatorFactory.makeTabBarCoordinator(coordinatorFactory: coordinatorFactory, router: router)
         addChild(tabBarCoordinator)
 
         tabBarCoordinator.start()

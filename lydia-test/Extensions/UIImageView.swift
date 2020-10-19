@@ -19,6 +19,7 @@ extension UIImageView {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
+                        self?.alpha = 1.0
                         self?.contentMode = .scaleAspectFit
                     }
                 } else {

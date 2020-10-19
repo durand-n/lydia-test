@@ -1,40 +1,37 @@
 //
-//  ContactsCoordinator.swift
+//  FavoritesCoordinator.swift
 //  lydia-test
 //
-//  Created by Benoît Durand on 14/10/2020.
+//  Created by Benoît Durand on 19/10/2020.
 //
 
 import UIKit
 import CoreData
 import ContactsUI
 
-class ContactsCoordinator: BaseCoordinator {
-    private let factory: ContactsModuleFactory
+class FavoritesCoordinator: BaseCoordinator {
+    private let factory: FavoritesModuleFactory
     private let router: Router
     private let dataManager: DataManagerProtocol
     
-    init(factory: ContactsModuleFactory, router: Router, dataManager: DataManagerProtocol) {
+    init(factory: FavoritesModuleFactory, router: Router, dataManager: DataManagerProtocol) {
         self.router = router
         self.factory = factory
         self.dataManager = dataManager
     }
     
     override func start() {
-        showContactsList()
+        showFavorites()
     }
     
-    func showContactsList() {
-        let module = factory.makeContactsListController(viewModel: ContactsListViewModel(dataManager: dataManager))
+    func showFavorites() {
+        let module = self.factory.makeFavoritesView(viewModel: FavoritesViewModel(dataManager: dataManager))
+        
         module.onShowDetails =  { [weak self] user in
             self?.showContactsDetails(user: user)
         }
         
-        module.onPhone = { [weak self] number in
-            self?.call(number: number)
-        }
-    
-        self.router.push(module)
+        self.router.push(module, animated: false)
     }
     
     func showContactsDetails(user: User) {
@@ -58,8 +55,4 @@ class ContactsCoordinator: BaseCoordinator {
     func call(number: String) {
         self.router.openUrl(url: URL(string: "tel://\(number)"))
     }
-    
 }
-
-
-

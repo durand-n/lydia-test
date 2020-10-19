@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class CoordinatorFactoryImp: CoordinatorFactory {
-    func makeContactsCoordinator(navigationController: UINavigationController, factory: ContactsModuleFactory) -> BaseCoordinator {
-        return ContactsCoordinator(factory: factory, router: RouterImp(rootController: navigationController))
+    func makeFavoritesCoordinator(navigationController: UINavigationController, factory: FavoritesModuleFactory, dataManager: DataManagerProtocol) -> BaseCoordinator {
+        return FavoritesCoordinator(factory: factory, router: RouterImp(rootController: navigationController), dataManager: dataManager)
+    }
+    
+    func makeContactsCoordinator(navigationController: UINavigationController, factory: ContactsModuleFactory, dataManager: DataManagerProtocol) -> BaseCoordinator {
+        return ContactsCoordinator(factory: factory, router: RouterImp(rootController: navigationController), dataManager: dataManager)
     }
     
     func makeTabBarCoordinator(coordinatorFactory: CoordinatorFactory, router: Router) -> BaseCoordinator & TabbarProtocol {

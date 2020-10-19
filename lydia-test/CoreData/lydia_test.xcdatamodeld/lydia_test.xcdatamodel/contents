@@ -8,6 +8,7 @@
         <attribute name="email" attributeType="String"/>
         <attribute name="firstName" attributeType="String"/>
         <attribute name="gender" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lastName" attributeType="String"/>
         <attribute name="latitude" attributeType="String"/>
         <attribute name="longitude" attributeType="String"/>
@@ -17,6 +18,6 @@
         <attribute name="thumbnail" attributeType="String"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="253"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="268"/>
     </elements>
 </model>

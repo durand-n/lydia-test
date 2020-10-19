@@ -26,22 +26,24 @@ class ContactsListViewModel: ContactsListViewModelType {
     var onDataLoaded: (() -> Void)?
     var onShowError: ((String) -> Void)?
     
+    private var dataManager: DataManagerProtocol
     private var users: [User] {
         didSet {
             userCount = users.count
         }
     }
     
-    init() {
-        self.users = DataManager.shared.users ?? []
+    init(dataManager: DataManagerProtocol) {
+        self.users = dataManager.users ?? []
         self.userCount = self.users.count
+        self.dataManager = dataManager
     }
     
     func startFetchingUsers() {
         // If users count is enough to display full page of contacts, do nothing
         guard userCount < 20 else { return }
         Loader.show()
-        DataManager.shared.getFirstContacts { newUsers, error  in
+        dataManager.getFirstContacts { newUsers, error  in
             Loader.hide()
             if let users = newUsers {
                 self.users.append(contentsOf: users)
@@ -53,7 +55,7 @@ class ContactsListViewModel: ContactsListViewModelType {
     }
     
     func fetchNextUsers() {
-        DataManager.shared.getNextContacts { newUsers, error in
+        dataManager.getNextContacts { newUsers, error in
             if let users = newUsers {
                 self.users.append(contentsOf: users)
                 self.onInsert?(users.count)

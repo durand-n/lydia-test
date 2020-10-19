@@ -17,6 +17,10 @@ extension ModuleFactoryImp: ContactsModuleFactory {
     func makeContactsDetailsController(viewModel: ContactsDetailsViewModelType) -> ContactsDetailsView {
         return ContactsDetailsController(viewModel: viewModel)
     }
-    
-    
+}
+
+extension ModuleFactoryImp: FavoritesModuleFactory {
+    func makeFavoritesView(viewModel: FavoritesViewModelType) -> FavoritesView {
+        return FavoritesController(viewModel: viewModel)
+    }
 }

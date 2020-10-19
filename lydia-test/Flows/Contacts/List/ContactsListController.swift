@@ -21,7 +21,7 @@ class ContactsListController: UIViewController, ContactsListView {
     private var viewModel: ContactsListViewModelType
     private var tableView = UITableView()
     private let spinner = UIActivityIndicatorView(style: .medium)
-    private var emptyView = EmptyView()
+    private var emptyView = EmptyView(title: "Il n'y a personne à afficher pour l'instant", showButton: true)
     
     init(viewModel: ContactsListViewModelType) {
         self.viewModel = viewModel
@@ -58,13 +58,14 @@ class ContactsListController: UIViewController, ContactsListView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerCellClass(ContactsListCell.self)
+        emptyView.backgroundColor = tableView.backgroundColor
         
         
         viewModel.startFetchingUsers()
     }
     
     func scrollListToTop() {
-        
+        tableView.setContentOffset(CGPoint(x: 0, y: -60), animated: true)
     }
     
 }
@@ -111,10 +112,7 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
 
             self.tableView.tableFooterView = spinner
             self.tableView.tableFooterView?.isHidden = false
-            #warning("remove before commit")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.viewModel.fetchNextUsers()
-            }
+            self.viewModel.fetchNextUsers()
         }
     }
     

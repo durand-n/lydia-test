@@ -50,7 +50,19 @@ class UserDataManager {
         let user = User(context: self.context)
         user.firstName = remoteUser.name.first
         user.lastName = remoteUser.name.last
-        user.gender = 1
+        user.email = remoteUser.email
+        user.gender = Gender(rawValue: remoteUser.gender)?.toInt16() ?? 0
+        user.age = Int16(remoteUser.dob.age)
+        user.birthdate = remoteUser.dob.date
+        user.cell = remoteUser.cell
+        user.phone = remoteUser.phone
+        user.city = remoteUser.location.city
+        user.street = "\(remoteUser.location.street.number), " + remoteUser.location.street.name
+        user.latitude = remoteUser.location.coordinates.latitude
+        user.longitude = remoteUser.location.coordinates.longitude
+        user.mediumPicture = remoteUser.picture.large
+        user.thumbnail = remoteUser.picture.thumbnail
+        user.isFavorite = false
         self.context.insert(user)
         self.users?.append(user)
         try self.context.save()
@@ -74,6 +86,7 @@ class UserDataManager {
             user.longitude = remoteUser.location.coordinates.longitude
             user.mediumPicture = remoteUser.picture.large
             user.thumbnail = remoteUser.picture.thumbnail
+            user.isFavorite = false
             self.context.insert(user)
             self.users?.append(user)
         }
