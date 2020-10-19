@@ -8,13 +8,9 @@ target 'lydia-test' do
   # Pods for lydia-test
   pod 'SnapKit', '~> 5.0.0'
   pod 'lottie-ios'
-
+  
   target 'lydia-testTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'lydia-testUITests' do
     # Pods for testing
   end
 

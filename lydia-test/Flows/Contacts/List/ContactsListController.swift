@@ -22,6 +22,7 @@ class ContactsListController: UIViewController, ContactsListView {
     private var tableView = UITableView()
     private let spinner = UIActivityIndicatorView(style: .medium)
     private var emptyView = EmptyView(title: "Il n'y a personne à afficher pour l'instant", showButton: true)
+    private var isLoading = false
     
     init(viewModel: ContactsListViewModelType) {
         self.viewModel = viewModel
@@ -32,6 +33,7 @@ class ContactsListController: UIViewController, ContactsListView {
         self.viewModel.onShowError = { [weak self] message in
             DispatchQueue.main.async {
                 self?.tableView.tableFooterView = nil
+                self?.isLoading = false
             }
             self?.showError(message: message)
         }
@@ -106,13 +108,16 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.userCount - 1 {
+        if indexPath.row == viewModel.userCount - 1, !isLoading {
+            isLoading = true
             spinner.frame = CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 70)
             spinner.startAnimating()
 
             self.tableView.tableFooterView = spinner
             self.tableView.tableFooterView?.isHidden = false
-            self.viewModel.fetchNextUsers()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.viewModel.fetchNextUsers()
+            }
         }
     }
     
@@ -132,6 +137,7 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
             }
             self.tableView.insertRows(at: indexs, with: .automatic)
             self.tableView.tableFooterView = nil
+            self.isLoading = false
         }
     }
     
