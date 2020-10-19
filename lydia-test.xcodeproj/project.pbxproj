@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141B8BED253C53B900C27944 /* ContactsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B8BEC253C53B900C27944 /* ContactsListCell.swift */; };
+		141B8BF2253C565E00C27944 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B8BF1253C565E00C27944 /* UITableView.swift */; };
 		14447EED25379718008F953F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447EEC25379718008F953F /* AppDelegate.swift */; };
 		14447EF725379718008F953F /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
 		14447EF92537971F008F953F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14447EF82537971F008F953F /* Assets.xcassets */; };
@@ -25,16 +27,17 @@
 		14447F632537A67B008F953F /* ContactsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F622537A67B008F953F /* ContactsListController.swift */; };
 		14447F692537A6F7008F953F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F682537A6F7008F953F /* UIViewController.swift */; };
 		14447F712537A765008F953F /* ContactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F702537A765008F953F /* ContactsCoordinator.swift */; };
-		14447F762537A7C3008F953F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F752537A7C3008F953F /* ContactsViewModel.swift */; };
-		14447F7B2537A7D0008F953F /* ContactsListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F7A2537A7D0008F953F /* ContactsListViewModelType.swift */; };
+		14447F762537A7C3008F953F /* ContactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F752537A7C3008F953F /* ContactsListViewModel.swift */; };
 		14447F802537A85C008F953F /* ContactsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F7F2537A85C008F953F /* ContactsDetailsController.swift */; };
-		14447F852537A873008F953F /* ContactsDetailsViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F842537A873008F953F /* ContactsDetailsViewModelType.swift */; };
+		14447F852537A873008F953F /* ContactsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14447F842537A873008F953F /* ContactsDetailsViewModel.swift */; };
 		144E0166253A38AD00684B3E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E0164253A38AD00684B3E /* User+CoreDataClass.swift */; };
 		144E0167253A38AD00684B3E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */; };
 		144E016F253A391900684B3E /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E016E253A391900684B3E /* UserDataManager.swift */; };
 		144E0184253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
 		144E0188253A3EA200684B3E /* lydia_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14447EF525379718008F953F /* lydia_test.xcdatamodeld */; };
 		144E018D253A564F00684B3E /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E018C253A564F00684B3E /* NetworkActivityManager.swift */; };
+		14557319253CC0A100DC7F29 /* ContactsDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14557318253CC0A100DC7F29 /* ContactsDetailsCells.swift */; };
+		14557323253D052900DC7F29 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14557322253D052900DC7F29 /* Date.swift */; };
 		1485A60C253B8673005F56ED /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A60B253B8673005F56ED /* EmptyView.swift */; };
 		1485A623253B87F9005F56ED /* sad-anim.json in Resources */ = {isa = PBXBuildFile; fileRef = 1485A622253B87F9005F56ED /* sad-anim.json */; };
 		1485A62E253BADD1005F56ED /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A62D253BADD1005F56ED /* UIButton.swift */; };
@@ -73,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		0E3A955C9037B530F427B943 /* Pods_lydia_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lydia_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		141B8BEC253C53B900C27944 /* ContactsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListCell.swift; sourceTree = "<group>"; };
+		141B8BF1253C565E00C27944 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		14447EE925379718008F953F /* lydia-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lydia-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14447EEC25379718008F953F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14447EF625379718008F953F /* lydia_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lydia_test.xcdatamodel; sourceTree = "<group>"; };
@@ -97,14 +102,15 @@
 		14447F622537A67B008F953F /* ContactsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListController.swift; sourceTree = "<group>"; };
 		14447F682537A6F7008F953F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		14447F702537A765008F953F /* ContactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCoordinator.swift; sourceTree = "<group>"; };
-		14447F752537A7C3008F953F /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
-		14447F7A2537A7D0008F953F /* ContactsListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewModelType.swift; sourceTree = "<group>"; };
+		14447F752537A7C3008F953F /* ContactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewModel.swift; sourceTree = "<group>"; };
 		14447F7F2537A85C008F953F /* ContactsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsController.swift; sourceTree = "<group>"; };
-		14447F842537A873008F953F /* ContactsDetailsViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsViewModelType.swift; sourceTree = "<group>"; };
+		14447F842537A873008F953F /* ContactsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsViewModel.swift; sourceTree = "<group>"; };
 		144E0164253A38AD00684B3E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		144E0165253A38AD00684B3E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		144E016E253A391900684B3E /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		144E018C253A564F00684B3E /* NetworkActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
+		14557318253CC0A100DC7F29 /* ContactsDetailsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailsCells.swift; sourceTree = "<group>"; };
+		14557322253D052900DC7F29 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		1485A60B253B8673005F56ED /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		1485A622253B87F9005F56ED /* sad-anim.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sad-anim.json"; sourceTree = "<group>"; };
 		1485A62D253BADD1005F56ED /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -291,7 +297,6 @@
 				14447F602537A636008F953F /* List */,
 				14447F612537A63B008F953F /* Details */,
 				14447F702537A765008F953F /* ContactsCoordinator.swift */,
-				14447F752537A7C3008F953F /* ContactsViewModel.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -299,8 +304,9 @@
 		14447F602537A636008F953F /* List */ = {
 			isa = PBXGroup;
 			children = (
+				14447F752537A7C3008F953F /* ContactsListViewModel.swift */,
 				14447F622537A67B008F953F /* ContactsListController.swift */,
-				14447F7A2537A7D0008F953F /* ContactsListViewModelType.swift */,
+				141B8BEC253C53B900C27944 /* ContactsListCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -309,7 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				14447F7F2537A85C008F953F /* ContactsDetailsController.swift */,
-				14447F842537A873008F953F /* ContactsDetailsViewModelType.swift */,
+				14447F842537A873008F953F /* ContactsDetailsViewModel.swift */,
+				14557318253CC0A100DC7F29 /* ContactsDetailsCells.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -324,6 +331,8 @@
 				148DD83C25387DCF00C0523F /* UIImageView.swift */,
 				148DD84525387EDB00C0523F /* Misc.swift */,
 				1485A62D253BADD1005F56ED /* UIButton.swift */,
+				141B8BF1253C565E00C27944 /* UITableView.swift */,
+				14557322253D052900DC7F29 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -635,14 +644,15 @@
 				14447F432537A2A6008F953F /* ModuleFactory.swift in Sources */,
 				148DD829253871C700C0523F /* UIColor.swift in Sources */,
 				148DD82E2538726F00C0523F /* UIView.swift in Sources */,
-				14447F762537A7C3008F953F /* ContactsViewModel.swift in Sources */,
+				141B8BF2253C565E00C27944 /* UITableView.swift in Sources */,
+				14447F762537A7C3008F953F /* ContactsListViewModel.swift in Sources */,
+				141B8BED253C53B900C27944 /* ContactsListCell.swift in Sources */,
 				144E016F253A391900684B3E /* UserDataManager.swift in Sources */,
 				14447F632537A67B008F953F /* ContactsListController.swift in Sources */,
 				148DD867253A0CE000C0523F /* Constants.swift in Sources */,
-				14447F7B2537A7D0008F953F /* ContactsListViewModelType.swift in Sources */,
 				14447F582537A61E008F953F /* AppCoordinator.swift in Sources */,
 				14447F712537A765008F953F /* ContactsCoordinator.swift in Sources */,
-				14447F852537A873008F953F /* ContactsDetailsViewModelType.swift in Sources */,
+				14447F852537A873008F953F /* ContactsDetailsViewModel.swift in Sources */,
 				148DD84625387EDB00C0523F /* Misc.swift in Sources */,
 				14447F3A2537A248008F953F /* RouterImp.swift in Sources */,
 				14447F482537A2B5008F953F /* ModuleFactoryImp.swift in Sources */,
@@ -667,6 +677,8 @@
 				14447F802537A85C008F953F /* ContactsDetailsController.swift in Sources */,
 				14447F4D2537A4F7008F953F /* CoordinatorFactory.swift in Sources */,
 				14447F692537A6F7008F953F /* UIViewController.swift in Sources */,
+				14557323253D052900DC7F29 /* Date.swift in Sources */,
+				14557319253CC0A100DC7F29 /* ContactsDetailsCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,7 +856,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-test";
+				PRODUCT_BUNDLE_IDENTIFIER = "lydia-test.ben.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -864,7 +876,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "durand-n.lydia-test";
+				PRODUCT_BUNDLE_IDENTIFIER = "lydia-test.ben.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

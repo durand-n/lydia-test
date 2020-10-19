@@ -14,8 +14,8 @@ extension ModuleFactoryImp: ContactsModuleFactory {
         return ContactsListController(viewModel: viewModel)
     }
     
-    func makeContactsDetailsController(viewModel: ContactsListViewModelType) -> ContactsDetailsView {
-        return ContactsDetailsController()
+    func makeContactsDetailsController(viewModel: ContactsDetailsViewModelType) -> ContactsDetailsView {
+        return ContactsDetailsController(viewModel: viewModel)
     }
     
     

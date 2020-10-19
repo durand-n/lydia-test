@@ -18,15 +18,49 @@ class RandomUsersApiModel {
     }
     
     struct User: Codable {
-        var gender: String
-        var name: UserName
+        let gender: String
+        let name: Name
+        let location: Location
+        let email: String
+        let dob: Dob
+        let phone, cell: String
+        let picture: Picture
+        
     }
     
-    struct UserName: Codable {
-        var title: String
-        var first: String
-        var last: String
+    // MARK: - Dob
+    struct Dob: Codable {
+        let date: Date
+        let age: Int
     }
 
+
+    // MARK: - Location
+    struct Location: Codable {
+        let street: Street
+        let city: String
+        let coordinates: Coordinates
+    }
+    
+    // MARK: - Street
+    struct Street: Codable {
+        let number: Int
+        let name: String
+    }
+
+    // MARK: - Coordinates
+    struct Coordinates: Codable {
+        let latitude, longitude: String
+    }
+
+    // MARK: - Name
+    struct Name: Codable {
+        let first, last: String
+    }
+
+    // MARK: - Picture
+    struct Picture: Codable {
+        let large, thumbnail: String
+    }
 }
 

@@ -9,6 +9,25 @@
 import Foundation
 import CoreData
 
+enum Gender: String {
+    case male
+    case female
+    
+    func toInt16() -> Int16 {
+        switch self {
+        case .male:
+            return 0
+        case .female:
+            return 1
+        }
+    }
+    
+    init?(value: Int16?) {
+        guard let value = value, value <= 1, value >= 0 else { return nil }
+        self = value == 0 ? .male : .female
+    }
+}
+
 class UserDataManager {
     var users: [User]?
     var container: NSPersistentContainer
@@ -43,7 +62,18 @@ class UserDataManager {
             let user = User(context: self.context)
             user.firstName = remoteUser.name.first
             user.lastName = remoteUser.name.last
-            user.gender = 1
+            user.email = remoteUser.email
+            user.gender = Gender(rawValue: remoteUser.gender)?.toInt16() ?? 0
+            user.age = Int16(remoteUser.dob.age)
+            user.birthdate = remoteUser.dob.date
+            user.cell = remoteUser.cell
+            user.phone = remoteUser.phone
+            user.city = remoteUser.location.city
+            user.street = "\(remoteUser.location.street.number), " + remoteUser.location.street.name
+            user.latitude = remoteUser.location.coordinates.latitude
+            user.longitude = remoteUser.location.coordinates.longitude
+            user.mediumPicture = remoteUser.picture.large
+            user.thumbnail = remoteUser.picture.thumbnail
             self.context.insert(user)
             self.users?.append(user)
         }

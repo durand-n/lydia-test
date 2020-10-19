@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 extension UIViewController {
     open func toPresent() -> UIViewController? {
@@ -18,5 +19,24 @@ extension UIViewController {
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+}
+
+extension UIViewController: MFMailComposeViewControllerDelegate {
+    public func sendEmail(_ mailAddress: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([mailAddress])
+            self.present(mail as UIViewController, animated: true)
+        } else {
+            if let url = URL(string: "mailto:\(mailAddress)") {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+    
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

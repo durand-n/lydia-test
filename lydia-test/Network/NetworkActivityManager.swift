@@ -29,7 +29,7 @@ final class NetworkActivityMonitor: NetworkActivityManager {
         return wasConnected
     }
     
-    private var wasConnected = false
+    private var wasConnected = true
     private let activity = NWPathMonitor()
     
     override init() {

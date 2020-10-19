@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 extension Notification.Name {
     static let showOffline = Notification.Name("showOffline")
@@ -20,3 +21,15 @@ extension NSManagedObject {
     }
 }
 
+extension MKMapView {
+ func centerToLocation(
+   _ location: CLLocation,
+   regionRadius: CLLocationDistance = 1000
+ ) {
+   let coordinateRegion = MKCoordinateRegion(
+     center: location.coordinate,
+     latitudinalMeters: regionRadius,
+     longitudinalMeters: regionRadius)
+   setRegion(coordinateRegion, animated: true)
+ }
+}

@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  lydia-test
 //
-//  Created by Benoît Durand on 16/10/2020.
+//  Created by Benoît Durand on 18/10/2020.
 //
 //
 
@@ -17,11 +17,18 @@ extension User {
     }
 
     @NSManaged public var firstName: String
-    @NSManaged public var lastName: String
     @NSManaged public var gender: Int16
-
-}
-
-extension User : Identifiable {
+    @NSManaged public var lastName: String
+    @NSManaged public var street: String
+    @NSManaged public var city: String
+    @NSManaged public var latitude: String
+    @NSManaged public var longitude: String
+    @NSManaged public var mediumPicture: String
+    @NSManaged public var thumbnail: String
+    @NSManaged public var age: Int16
+    @NSManaged public var phone: String
+    @NSManaged public var birthdate: Date
+    @NSManaged public var email: String
+    @NSManaged public var cell: String
 
 }

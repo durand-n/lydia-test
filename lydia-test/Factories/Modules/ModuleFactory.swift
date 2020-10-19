@@ -11,5 +11,5 @@ import Foundation
 
 protocol ContactsModuleFactory {
     func makeContactsListController(viewModel: ContactsListViewModelType) -> ContactsListView
-    func makeContactsDetailsController(viewModel: ContactsListViewModelType) -> ContactsDetailsView
+    func makeContactsDetailsController(viewModel: ContactsDetailsViewModelType) -> ContactsDetailsView
 }

@@ -10,7 +10,6 @@ import UIKit
 class ContactsCoordinator: BaseCoordinator {
     private let factory: ContactsModuleFactory
     private let router: Router
-    private let viewModel = ContactsViewModel()
     
     init(factory: ContactsModuleFactory, router: Router) {
         self.router = router
@@ -22,14 +21,29 @@ class ContactsCoordinator: BaseCoordinator {
     }
     
     func showContactsList() {
-        let module = factory.makeContactsListController(viewModel: viewModel)
-        module.onShowDetails =  { [weak self] in
-            self?.showContactsDetails()
+        let module = factory.makeContactsListController(viewModel: ContactsListViewModel())
+        module.onShowDetails =  { [weak self] user in
+            self?.showContactsDetails(user: user)
         }
+        
+        module.onPhone = { [weak self] number in
+            self?.call(number: number)
+        }
+    
+        
         self.router.push(module)
     }
     
-    func showContactsDetails() {
-
+    func showContactsDetails(user: User) {
+        let module = factory.makeContactsDetailsController(viewModel: ContactsDetailsViewModel(user: user))
+        module.onPhone = { [weak self] number in
+            self?.call(number: number)
+        }
+        
+        self.router.push(module)
+    }
+    
+    func call(number: String) {
+        self.router.openUrl(url: URL(string: "tel://\(number)"))
     }
 }

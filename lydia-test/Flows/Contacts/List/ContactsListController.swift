@@ -10,11 +10,13 @@ import UIKit
 protocol ContactsListView: BaseView {
     func scrollListToTop()
     
-    var onShowDetails: (() -> Void)? { get set }
+    var onPhone: ((String) -> Void)? { get set }
+    var onShowDetails: ((User) -> Void)? { get set }
 }
 
 class ContactsListController: UIViewController, ContactsListView {
-    var onShowDetails: (() -> Void)?
+    var onPhone: ((String) -> Void)?
+    var onShowDetails: ((User) -> Void)?
     
     private var viewModel: ContactsListViewModelType
     private var tableView = UITableView()
@@ -24,6 +26,7 @@ class ContactsListController: UIViewController, ContactsListView {
     init(viewModel: ContactsListViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = "Contacts"
         self.viewModel.onInsert = self.didInsert
         self.viewModel.onDataLoaded = self.didLoad
         self.viewModel.onShowError = { [weak self] message in
@@ -54,6 +57,7 @@ class ContactsListController: UIViewController, ContactsListView {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.registerCellClass(ContactsListCell.self)
         
         
         viewModel.startFetchingUsers()
@@ -79,10 +83,25 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = viewModel.dataFor(row: indexPath.row)
-        let cell = UITableViewCell()
-        cell.textLabel?.text = data?.name
+        guard let data = viewModel.dataFor(row: indexPath.row) else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withClass: ContactsListCell.self)
+        cell.accessoryType = .disclosureIndicator
+        cell.onCall = { [weak self] in
+            self?.onPhone?(data.phone)
+        }
+        
+        cell.onEmail = {[weak self] in
+            self?.sendEmail(data.mail)
+        }
+        cell.setContent(data: data)
+
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = viewModel.userFor(row: indexPath.row) else { return }
+        onShowDetails?(user)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -117,5 +136,7 @@ extension ContactsListController: UITableViewDelegate, UITableViewDataSource {
             self.tableView.tableFooterView = nil
         }
     }
+    
+    
     
 }

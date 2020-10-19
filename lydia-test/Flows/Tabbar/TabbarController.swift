@@ -35,6 +35,7 @@ class TabbarController: UITabBarController, TabbarView {
     private var isFirstViewWillAppear = true
     private var networkConnectedBannerView: NetworkStatusBannerView?
     private var networkDisconnectedBannerView: NetworkStatusBannerView?
+    private var isNetworkBannerShown = false
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -43,6 +44,9 @@ class TabbarController: UITabBarController, TabbarView {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkActivityManager.shared.didConnect = didConnect
+        NetworkActivityManager.shared.didDisconnect = didDisconnect
+        NetworkActivityManager.shared.setup()
         DispatchQueue.main.async {
             self.initNetworkStatusViews()
         }
@@ -117,10 +121,7 @@ class TabbarController: UITabBarController, TabbarView {
     private func initNetworkStatusViews() {
         networkConnectedBannerView = NetworkStatusBannerView(title: "connecté", color: .green, image: UIImage())
         networkDisconnectedBannerView = NetworkStatusBannerView(title: "déconnecté", color: .red, image: UIImage())
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(didDisconnect), name: .showOffline, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didConnect), name: .hideOffline, object: nil)
-        
+                
         view.addSubviews([networkConnectedBannerView!, networkDisconnectedBannerView!])
         
         networkDisconnectedBannerView?.snp.makeConstraints { cm in
@@ -140,25 +141,21 @@ class TabbarController: UITabBarController, TabbarView {
     
     @objc private func didConnect() {
         // if disconnected banner was not shown, no need to show re-connected banner
-        guard !(self.networkDisconnectedBannerView?.isHidden ?? true) else { return }
-        let group = DispatchGroup()
+       
+        guard (isNetworkBannerShown) else { return }
         
-        group.enter()
         DispatchQueue.main.async {
             self.networkDisconnectedBannerView?.fadeOut()
-            self.networkConnectedBannerView?.fadeIn()
-            group.leave()
-        }
-        
-        group.enter()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.networkConnectedBannerView?.fadeOut()
-            group.leave()
+            self.networkConnectedBannerView?.fadeIn() {_ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.networkConnectedBannerView?.fadeOut()
+                }
+            }
         }
     }
     
     @objc private func didDisconnect() {
-        print("logout")
+        isNetworkBannerShown = true
         DispatchQueue.main.async {
             self.networkConnectedBannerView?.fadeOut()
             self.networkDisconnectedBannerView?.fadeIn()

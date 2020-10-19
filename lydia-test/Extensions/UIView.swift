@@ -41,18 +41,19 @@ extension UIView {
         }
     }
     
-    open func fadeIn(withDuration: TimeInterval = 0.2) {
+    open func fadeIn(withDuration: TimeInterval = 0.2, completion: ((Bool) -> Void)? = nil) {
         self.isHidden = false
         UIView.animate(withDuration: withDuration, delay: 0, options: [.curveEaseInOut], animations: {
             self.alpha = 1
-        }, completion: nil)
+        }, completion: completion)
     }
     
-    open func fadeOut(withDuration: TimeInterval = 0.2) {
+    open func fadeOut(withDuration: TimeInterval = 0.2, completion: ((Bool) -> Void)? = nil) {
         UIView.animate(withDuration: withDuration, delay: 0, options: [.curveEaseInOut], animations: {
             self.alpha = 0
-        }, completion: { _ in
+        }, completion: { success in
             self.isHidden = true
+            completion?(success)
         })
     }
         

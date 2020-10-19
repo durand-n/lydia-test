@@ -20,14 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         #if DEBUG
             UserDefaults.standard.removeObject(forKey: Constants.CachedItems.lastPageLoaded.rawValue)
-            DataManager.shared.removeContacts()
+//            DataManager.shared.removeContacts()
         #endif
         
-        // Connectivity tracking
-        NetworkActivityManager.shared.didConnect = didConnect
-        NetworkActivityManager.shared.didDisconnect = didDisconnect
-        NetworkActivityManager.shared.setup()
-        //
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -41,13 +36,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     fileprivate func makeCoordinator() -> Coordinator {
         return ApplicationCoordinator(router: RouterImp(rootController: rootController), coordinatorFactory: CoordinatorFactoryImp())
-    }
-    
-    func didConnect() {
-        NotificationCenter.default.post(name: .hideOffline, object: nil)
-    }
-    
-    func didDisconnect() {
-        NotificationCenter.default.post(name: .showOffline, object: nil)
     }
 }

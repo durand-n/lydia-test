@@ -15,7 +15,7 @@ extension RandomUsersApiRoutes {
     var path: String {
         switch self {
         case .Listing(page: let page):
-            return "https://randomuserr.me/api/?results=\(Constants.PAGINATION_NUMBER)&seed=lydia&page=\(page)"
+            return "https://randomuser.me/api/?results=\(Constants.PAGINATION_NUMBER)&seed=lydia&page=\(page)"
         }
     }
 }
@@ -28,12 +28,13 @@ class RandomUsersApiImp: RandomUsersApi {
 
     func getListing(page: UInt, completion: @escaping (RandomUsersApiModel.ApiResult? ,Error?) -> Void) {
         if let url = URL(string: RandomUsersApiRoutes.Listing(page: page).path) {
-            print("url: \(url)")
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     do {
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
                         let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .iso8601
+                        decoder.dateDecodingStrategy = .formatted(dateFormatter)
                         let result = try decoder.decode(RandomUsersApiModel.ApiResult.self, from: data)
                         completion(result, error)
                     } catch let error {

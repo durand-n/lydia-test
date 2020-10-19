@@ -7,7 +7,19 @@
 
 import Foundation
 
-class ContactsViewModel: ContactsListViewModelType {
+protocol ContactsListViewModelType {
+    var onInsert: ((Int) -> Void)? { get set }
+    var onDataLoaded: (() -> Void)? { get set }
+    var onShowError: ((String) -> Void)? { get set }
+    var userCount: Int { get }
+    
+    func dataFor(row: Int) -> ContactItemRepresentable?
+    func userFor(row: Int) -> User?
+    func fetchNextUsers()
+    func startFetchingUsers()
+}
+
+class ContactsListViewModel: ContactsListViewModelType {
     
     // MARK - protocol compliance
     var onInsert: ((Int) -> Void)?
@@ -58,12 +70,25 @@ class ContactsViewModel: ContactsListViewModelType {
         return ContactItemRepresentable(contact: users[row])
     }
     
+    func userFor(row: Int) -> User? {
+        guard row < userCount else { return nil}
+        return users[row]
+    }
+    
 }
 
 struct ContactItemRepresentable {
     var name: String
+    var phone: String
+    var mail: String
+    var thumb: URL?
+    var location: String
     
     init(contact: User) {
         name = contact.firstName + " " + contact.lastName
+        mail = contact.email
+        phone = contact.phone
+        thumb = URL(string: contact.thumbnail)
+        location = contact.city
     }
 }
